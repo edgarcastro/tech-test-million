@@ -10,7 +10,7 @@ Prerequisites:
 Quick Start:
 1. Ensure Docker is running on your system
 2. Navigate to the project root directory
-3. Run: docker-compose up --build
+3. Run: docker compose up --build
 4. Wait for all services to start (MongoDB, Backend, Frontend)
 5. Access the application at http://localhost:5172
 
