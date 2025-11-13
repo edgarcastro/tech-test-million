@@ -360,4 +360,5 @@ This is a technical test project.
 
 ## 👤 Author
 
-Technical Test Implementation
+https://github.com/edgarcastro
+edgar.castro.villa@outlook.com
