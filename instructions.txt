@@ -39,8 +39,15 @@ Development:
 - Changes to source files will automatically reload
 
 Testing:
-- Use the frontend interface to filter and browse properties
-- Test filters: name, address, price range
-- Click on property cards to view details
-- Verify responsive design on different screen sizes
+- Backend Unit Tests:
+  * Run: cd backend && dotnet test tech-test-million.Tests.csproj
+  * Tests cover Controllers, Services, Repositories, and DTOs
+  * Uses NUnit framework with Moq for mocking
+  * Test files located in backend/Tests/ directory
+
+- Manual Application Testing:
+  * Use the frontend interface to filter and browse properties
+  * Test filters: name, address, price range
+  * Click on property cards to view details
+  * Verify responsive design on different screen sizes
 

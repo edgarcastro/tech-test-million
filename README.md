@@ -41,6 +41,7 @@ A full-stack property management application built with .NET 9.0 backend and Rea
 - ✅ CORS configuration for frontend-backend communication
 - ✅ Docker Compose setup for easy deployment
 - ✅ MongoDB data seeding with mock data
+- ✅ Unit tests with NUnit and Moq
 
 ## 🚀 Getting Started
 
@@ -97,6 +98,8 @@ tech-test-million/
 │   │   └── DTOs/             # Data Transfer Objects
 │   ├── Repositories/         # Data access layer
 │   ├── Services/             # Business logic layer
+│   ├── Tests/                # Unit tests (NUnit)
+│   ├── tech-test-million.Tests.csproj  # Test project
 │   └── Program.cs            # Application entry point
 ├── frontend/
 │   ├── src/
@@ -223,6 +226,8 @@ GET /properties/{id}
 - ASP.NET Core Web API
 - MongoDB.Driver 3.5.0
 - Microsoft.AspNetCore.OpenApi
+- NUnit 4.2.2 (Testing)
+- Moq 4.20.72 (Mocking)
 
 ### Frontend
 
@@ -280,7 +285,20 @@ GET /properties/{id}
 - Password: `password`
 - Port: `27017`
 
-## 🧪 Testing the Application
+## 🧪 Testing
+
+### Running Backend Unit Tests
+
+The backend includes a comprehensive NUnit test suite covering Controllers, Services, Repositories, and DTOs.
+
+**Run all tests:**
+
+```bash
+cd backend
+dotnet test tech-test-million.Tests.csproj
+```
+
+### Testing the Application (Manual)
 
 1. **Start the application** using Docker Compose
 2. **Access the frontend** at http://localhost:5172
@@ -301,6 +319,7 @@ GET /properties/{id}
 - DTOs for API responses
 - MongoDB ObjectId for entity IDs
 - CORS enabled for frontend communication
+- Unit tests with NUnit and Moq for mocking dependencies
 
 ### Frontend
 

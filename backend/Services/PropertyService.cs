@@ -75,6 +75,7 @@ public class PropertyService : IPropertyService
    
         return new PropertyResponseDetailDto
         {
+            IdProperty = property.IdProperty,
             IdOwner = property.IdOwner,
             Name = property.Name,
             Address = property.Address,
