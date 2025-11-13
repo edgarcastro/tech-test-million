@@ -1,0 +1,55 @@
+# Ignore test files and directories
+Tests/
+tech-test-million.Tests.csproj
+**/*Tests.csproj
+**/*.Tests.csproj
+
+# Ignore build outputs
+bin/
+obj/
+*.dll
+*.pdb
+*.exe
+
+# Ignore IDE and editor files
+.vs/
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Ignore user-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Ignore logs
+*.log
+logs/
+
+# Ignore test results
+TestResults/
+coverage/
+*.coverage
+*.coveragexml
+
+# Ignore environment files
+.env
+.env.*
+appsettings.Development.json
+
+# Ignore HTTP test files
+*.http
+
+# Ignore Git files
+.git/
+.gitignore
+.gitattributes
+
+# Ignore documentation
+README.md
+*.md
+
