@@ -1,0 +1,46 @@
+TECHNICAL TEST - PROPERTY MANAGEMENT SYSTEM
+
+SETUP INSTRUCTIONS
+==================
+
+Prerequisites:
+- Docker and Docker Compose installed
+- Git (optional, if cloning repository)
+
+Quick Start:
+1. Ensure Docker is running on your system
+2. Navigate to the project root directory
+3. Run: docker-compose up --build
+4. Wait for all services to start (MongoDB, Backend, Frontend)
+5. Access the application at http://localhost:5172
+
+Services:
+- Frontend: http://localhost:5172
+- Backend API: http://localhost:5254
+- MongoDB: localhost:27017
+
+API Endpoints:
+- GET /properties - List all properties (with optional filters: name, address, minPrice, maxPrice)
+- GET /properties/{id} - Get property details by ID
+
+Example API Calls:
+- GET http://localhost:5254/properties
+- GET http://localhost:5254/properties?name=Apartment&minPrice=500000&maxPrice=1000000
+- GET http://localhost:5254/properties/{propertyId}
+
+Database:
+- MongoDB database: tech-test-million
+- Collections: owners, properties, propertyImages, propertyTraces
+- Initial data is automatically seeded via mongo.init.js
+
+Development:
+- Backend hot reload: Enabled (dotnet watch)
+- Frontend hot reload: Enabled (Vite HMR)
+- Changes to source files will automatically reload
+
+Testing:
+- Use the frontend interface to filter and browse properties
+- Test filters: name, address, price range
+- Click on property cards to view details
+- Verify responsive design on different screen sizes
+

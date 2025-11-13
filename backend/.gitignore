@@ -1,0 +1,36 @@
+# Ignore build outputs and user secrets
+bin/
+obj/
+*.user
+*.vs/
+*.swp
+*.suo
+
+# Ignore sensitive config files
+secrets.json
+
+# Ignore IDE/editor files
+.vscode/
+.idea/
+
+# Ignore local database files
+*.db
+
+# Ignore environment files
+.env
+.env.*
+
+# Ignore logs and output
+logs/
+*.log
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore test output
+TestResults/
+
+# Ignore Docker artifacts
+docker-compose.override.yml
+

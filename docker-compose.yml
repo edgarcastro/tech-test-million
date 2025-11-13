@@ -1,0 +1,53 @@
+services:
+  frontend:
+    build:
+      context: ./frontend
+    networks:
+      - tech-test-million
+    ports:
+      - "5172:5172"
+    restart: always
+    command: yarn dev
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules # Ensure node_modules are not overwritten
+    environment:
+      - VITE_BACKEND_URL=http://localhost:5254
+    depends_on:
+      - backend
+  backend:
+    build:
+      context: ./backend
+    ports:
+      - "5254:5254"
+    volumes:
+      - ./backend:/src
+    command: dotnet watch run --urls http://0.0.0.0:5254 --environment Development
+    environment:
+      - MONGO_CONNECTION_STRING=mongodb://root:password@mongo:27017
+      - ASPNETCORE_URLS=http://0.0.0.0:5254
+      - CORS_ORIGINS=http://localhost:5172
+    networks:
+      - tech-test-million
+    depends_on:
+      - mongo
+  mongo:
+    image: mongo:7.0
+    restart: always
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: password
+      MONGO_INITDB_DATABASE: tech-test-million
+    volumes:
+      - mongo-data:/data/db
+      - ./database/mongo.init.js:/docker-entrypoint-initdb.d/mongo.init.js
+    networks:
+      - tech-test-million
+volumes:
+  mongo-data:
+
+networks:
+  tech-test-million:
+    driver: bridge
